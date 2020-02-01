@@ -1,6 +1,6 @@
 --- # Installing Httpd Server and Starting it
--   hosts: centos
-    remote_user: ansible
+-   hosts: webserver
+    remote_user: centos
     become: yes
     become_method: sudo
     connection: ssh
