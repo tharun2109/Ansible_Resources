@@ -9,7 +9,7 @@
         myHosts: centos
         gather: yes
         pkg: telnet  
-        sudoUser: ansible    
+        sudoUser: centos    
         becomeSudoUser: yes        
     tasks:
     - name: Install telnet server on centos
