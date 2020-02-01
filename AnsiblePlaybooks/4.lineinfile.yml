@@ -4,9 +4,9 @@
    - name: create a file if does not exist
      file:
          state: touch
-         path: /home/ansible/hostname.conf
+         path: /home/centos/hostname.conf
    - name: If line not there then add it
      lineinfile:
             state: present
-            dest: /home/ansible/hostname.conf
+            dest: /home/centos/hostname.conf
             line: Hostname={{ ansible_hostname}}

@@ -16,3 +16,5 @@
       yum:
         name: '{{ pkg }}'
         state: latest    
+      register: output
+    - debug: var=output
