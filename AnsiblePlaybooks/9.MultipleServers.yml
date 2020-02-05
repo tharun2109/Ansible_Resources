@@ -1,18 +1,18 @@
 --- # Multiple Tasks on Multiple Servers in Single Playbook
 - hosts: centos
-  remote_user: ansible
+  remote_user: centos
   become: yes
   become_method: sudo
   connection: ssh
   gather_facts: yes    
   tasks:
-  - name: Install httpd on centos Servers
+  - name: Install lynx on centos Servers
     yum: pkg=lynx state=installed update_cache=true
   - name: Querying for Telnet Install
     yum: pkg=telnet state=present update_cache=true
  
-- hosts: local
-  remote_user: ansible
+- hosts: webserver
+  remote_user: centos
   become: yes
   become_method: sudo
   connection: ssh
