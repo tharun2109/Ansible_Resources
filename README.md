@@ -5,9 +5,9 @@
 	ansible --version
 	
 ## Password less login:
-	-- login with ansible user
+	-- login with centos user
 	-- run the 'ssh-keygen'
-	-- run ssh-copy-id user@ip
+	-- run ssh-copy-id centos@ip
 	
 ## vi /etc/ansible/ansible.conf
 	-- enable 
@@ -61,9 +61,9 @@
 		$ ansible webserver -b -m yum -a "name=httpd state=latest"
 		
 	9 - Managing Services:
-		$ ansible webservers -b -m service -a "name=httpd state=started enabled=true"
-		$ ansible webservers -b -m service -a "name=httpd state=restarted"
-		$ ansible webservers -b -m service -a "name=httpd state=stopped"
+		$ ansible webserver -b -m service -a "name=httpd state=started enabled=true"
+		$ ansible webserver -b -m service -a "name=httpd state=restarted"
+		$ ansible webserver -b -m service -a "name=httpd state=stopped"
 			
 	10 - Gathering Facts:
 		$ ansible all -m setup | more
