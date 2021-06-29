@@ -1,6 +1,6 @@
 --- # Upload the Shell Script to Remote Host and Run it.
 -  hosts: centos
-   remote_user: ansible
+   remote_user: centos
    become: yes
    become_method: sudo
    connection: ssh
@@ -9,16 +9,16 @@
    -  name: Upload a file to the remote host if does not exist
       copy:
                src: /opt/hostname.sh
-               dest: /home/ansible/hostname.sh
+               dest: /home/centos/hostname.sh
                mode: 0755
    -  name: If line not there then add it
       lineinfile:
                state: present
-               dest: /home/ansible/hostname.sh
+               dest: /home/centos/hostname.sh
                regexp: '^HOSTNAME='
                line: HOSTNAME={{ ansible_hostname}}
    -  name: Run the program
-      shell: /home/ansible/hostname.sh
+      shell: /home/centos/hostname.sh
       register: result
    -  debug: msg="stdout={{ result }}"
        
